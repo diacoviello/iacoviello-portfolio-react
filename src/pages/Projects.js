@@ -105,6 +105,10 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  projectpaper: {
+    height: 350,
+    marginBottom: 50
+  }
 }));
 
 export default function Portfolio() {
@@ -148,11 +152,6 @@ export default function Portfolio() {
           >
             <strong>D. Iacoviello</strong>
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer

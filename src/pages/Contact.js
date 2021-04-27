@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
-import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
@@ -15,10 +14,10 @@ import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk";
 import gmailImg from "../images/gmail.png";
 import linkedinImg from "../images/linkedin-logo.png";
 import { mainListItems } from "./listitems.js";
@@ -146,11 +145,6 @@ export default function Portfolio() {
           >
             <strong>D. Iacoviello</strong>
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -175,13 +169,19 @@ export default function Portfolio() {
           <Grid container spacing={3} justify="center">
             <Grid item xs={12}>
               <Typography variant="h4" style={{ color: "#ffffff" }}>
-                <strong>If you would like to contact me, please reach out to me at:</strong>
+                <strong>
+                  If you would like to contact me, please reach out to me at:
+                </strong>
               </Typography>
             </Grid>
             <Grid item xs={9}>
               <Paper style={{ backgroundColor: "#9433A2", padding: 15 }}>
                 <List>
-                  <ListItem component="a" href="mailto: diacovmusic@gmail.com" target="_blank">
+                  <ListItem
+                    component="a"
+                    href="mailto: diacovmusic@gmail.com"
+                    target="_blank"
+                  >
                     <img
                       src={gmailImg}
                       style={{ height: 50, width: 50, margin: 10 }}
@@ -192,7 +192,8 @@ export default function Portfolio() {
                   </ListItem>
                   <ListItem
                     component="a"
-                    href="https://www.linkedin.com/in/david-iacoviello-2ab05348/" target="_blank"
+                    href="https://www.linkedin.com/in/david-iacoviello-2ab05348/"
+                    target="_blank"
                   >
                     <img
                       src={linkedinImg}
@@ -200,6 +201,18 @@ export default function Portfolio() {
                     ></img>
                     <Typography style={{ color: "#ffffff" }}>
                       <h4>Linked-In</h4>
+                    </Typography>
+                  </ListItem>
+                  <ListItem
+                    component="a"
+                    href="tel:732-947-0068"
+                    target="_blank"
+                  >
+                    <PhoneInTalkIcon
+                      style={{ height: 50, width: 50, margin: 10 }}
+                    />
+                    <Typography style={{ color: "#ffffff" }}>
+                      <h4>CLICK TO CALL</h4>
                     </Typography>
                   </ListItem>
                 </List>
