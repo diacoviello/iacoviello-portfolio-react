@@ -20,6 +20,9 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ResumeCard from "../components/ResumeCard";
 import { mainListItems } from "./listitems.js";
+import ResumePDF from "../images/Resume.pdf";
+import AllPagesPDFViewer from "../components/ResumePDF";
+
 
 const drawerWidth = 240;
 
@@ -101,6 +104,9 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  resume: {
+    width: "100%"
+  }
 }));
 
 export default function Portfolio() {
@@ -144,7 +150,6 @@ export default function Portfolio() {
           >
             <strong>D. Iacoviello</strong>
           </Typography>
-          
         </Toolbar>
       </AppBar>
       <Drawer
@@ -167,7 +172,13 @@ export default function Portfolio() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={12}>
-            <ResumeCard />
+            <div className="Resume">
+              <div className="all-page-container">
+                <AllPagesPDFViewer pdf={ResumePDF} />
+              </div>
+
+              <hr />
+            </div>
           </Grid>
         </Container>
       </main>
