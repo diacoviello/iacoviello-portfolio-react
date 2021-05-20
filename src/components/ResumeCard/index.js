@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import image from "../../images/David_iacoviello_dev_resume.png";
+import image from "../../images/Resume.pdf";
 
 const useStyles = makeStyles({
   root: {

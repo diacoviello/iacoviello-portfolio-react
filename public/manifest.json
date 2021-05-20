@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "homepage": "https://diacoviello.github.io/",
+  "short_name": "DAI Portfolio",
+  "name": "D. Iacoviello Portfolio",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
