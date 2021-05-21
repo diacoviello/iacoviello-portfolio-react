@@ -9,7 +9,7 @@ import ContactMailIcon from "@material-ui/icons/ContactMail";
 
 export const mainListItems = (
   <div>
-    <ListItem button component="a" href="/iacoviello-portfolio-react">
+    <ListItem button component="a" href="/">
       <ListItemIcon style={{ color: "#ffffff" }}>
         <PersonIcon />
       </ListItemIcon>

@@ -7,10 +7,10 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <Switch>
-          <Route exact path={["/iacoviello-portfolio-react"]}>
+          <Route exact path={["/"]}>
             <Portfolio />
           </Route>
           <Route exact path={["/projects"]}>

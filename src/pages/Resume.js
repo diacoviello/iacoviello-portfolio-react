@@ -14,10 +14,10 @@ import Grid from "@material-ui/core/Grid";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { mainListItems } from "./listitems.js";
-import ResumePDF from "../images/Resume.pdf";
-import AllPagesPDFViewer from "../components/ResumePDF";
-import "../index.css";
 import myLogo from "../images/myLogo.png";
+import ResumePDF from "../images/Resume.pdf";
+import SinglePage from "../components/ResumePDF";
+import "../index.css";
 
 const drawerWidth = 200;
 
@@ -176,11 +176,7 @@ export default function Portfolio() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={12}>
-            {/* <div className="Resume">
-              <div className="all-page-container"> */}
-            <AllPagesPDFViewer style={{ width: "100%" }} pdf={ResumePDF} />
-            {/* </div>
-            </div> */}
+            <SinglePage style={{ width: "100%" }} pdf={ResumePDF} />
           </Grid>
         </Container>
       </main>
