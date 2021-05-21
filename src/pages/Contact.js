@@ -10,19 +10,18 @@ import ListItem from "@material-ui/core/ListItem";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk";
 import gmailImg from "../images/gmail.png";
 import linkedinImg from "../images/linkedin-logo.png";
+import myLogo from "../images/myLogo.png";
 import { mainListItems } from "./listitems.js";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -106,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Portfolio() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -136,10 +135,19 @@ export default function Portfolio() {
           >
             <MenuIcon />
           </IconButton>
+          <img
+            src={myLogo}
+            style={{
+              verticalAlign: "middle",
+              display: "inline",
+              height: "7vh",
+            }}
+          ></img>
           <Typography
             component="h1"
             variant="h4"
             color="inherit"
+            style={{ paddingLeft: "10px" }}
             noWrap
             className={classes.title}
           >

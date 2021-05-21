@@ -16,9 +16,10 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { mainListItems } from "./listitems.js";
 import ResumePDF from "../images/Resume.pdf";
 import AllPagesPDFViewer from "../components/ResumePDF";
-import '../index.css';
+import "../index.css";
+import myLogo from "../images/myLogo.png";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -99,13 +100,13 @@ const useStyles = makeStyles((theme) => ({
     height: 240,
   },
   resume: {
-    width: "100%"
-  }
+    width: "100%",
+  },
 }));
 
 export default function Portfolio() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -135,10 +136,19 @@ export default function Portfolio() {
           >
             <MenuIcon />
           </IconButton>
+          <img
+            src={myLogo}
+            style={{
+              verticalAlign: "middle",
+              display: "inline",
+              height: "7vh",
+            }}
+          ></img>
           <Typography
             component="h1"
             variant="h4"
             color="inherit"
+            style={{ paddingLeft: "10px" }}
             noWrap
             className={classes.title}
           >
@@ -168,8 +178,8 @@ export default function Portfolio() {
           <Grid container spacing={12}>
             {/* <div className="Resume">
               <div className="all-page-container"> */}
-                <AllPagesPDFViewer style={{width: "100%"}} pdf={ResumePDF} />
-              {/* </div>
+            <AllPagesPDFViewer style={{ width: "100%" }} pdf={ResumePDF} />
+            {/* </div>
             </div> */}
           </Grid>
         </Container>
