@@ -104,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
     maxHeight: "90%",
-    maxWidth: "90%"
+    maxWidth: "90%",
   },
 }));
 
@@ -152,11 +152,11 @@ export default function Portfolio() {
             component="h1"
             variant="h4"
             color="inherit"
-            style={{paddingLeft: "10px"}}
+            style={{ paddingLeft: "10px" }}
             noWrap
             className={classes.title}
           >
-            <strong>D. Iacoviello</strong>
+            <strong>Hi, I'm David Iacoviello.</strong>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -192,13 +192,15 @@ export default function Portfolio() {
             >
               <Typography>
                 <h3>
-                  My name is David Iacoviello and I am a web developer. Having
-                  spent most of my life in Music Education & Performance,
-                  delving into the world of coding and development has been a
-                  truly inspiring experience. Having been certified through the
-                  Rutger's Coding Bootcamp program, I have acquired a deep
-                  knowledge of coding formats, languages, and much more that has
-                  set me up for success in the world of web development.
+                  Full Stack web developer with a heavy background in music
+                  education to provide unique perspectives on how end-users
+                  interact with websites and software platforms. Earned a
+                  certificate in Full Stack Web Development from the Rutgers
+                  University Coding Boot Camp. Critical thinker and creative
+                  problem-solver with a passion to learn new things and achieve
+                  goals and aspirations. Strengths include, but aren’t limited
+                  to, creativity, dedication, loyalty, and a passion for problem
+                  solving.
                 </h3>
               </Typography>
             </Paper>

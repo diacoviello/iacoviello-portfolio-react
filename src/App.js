@@ -1,15 +1,21 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import { createBrowserHistory } from "history";
 
 function App() {
+// const history = createBrowserHistory({
+//   basename: "/iacoviello-portfolio-react",
+// }); 
+
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    // <Router history={history}>
+      <Router>
       <div>
-        <Switch>
+        
           <Route exact path={["/"]}>
             <Portfolio />
           </Route>
@@ -22,7 +28,7 @@ function App() {
           <Route exact path={["/contact"]}>
             <Contact />
           </Route>
-        </Switch>
+       
       </div>
     </Router>
   );

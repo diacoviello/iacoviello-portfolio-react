@@ -31,7 +31,7 @@ export default function SinglePage(props) {
   return (
     <>
       <Grid container direction="row" justify="center" alignItems="center">
-        <Grid item xs={1}>
+        <Grid item xs={1} style={{ textAlign: "right" }}>
           <Button
             variant="outlined"
             disabled={pageNumber <= 1}

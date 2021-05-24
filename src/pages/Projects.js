@@ -155,7 +155,7 @@ export default function Portfolio() {
             noWrap
             className={classes.title}
           >
-            <strong>D. Iacoviello</strong>
+            <strong>Here are some of my projects:</strong>
           </Typography>
         </Toolbar>
       </AppBar>

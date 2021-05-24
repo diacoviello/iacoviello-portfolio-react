@@ -151,7 +151,7 @@ export default function Portfolio() {
             noWrap
             className={classes.title}
           >
-            <strong>D. Iacoviello</strong>
+            <strong>Thanks for stopping by!</strong>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -175,11 +175,16 @@ export default function Portfolio() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3} justify="center">
-            <Grid item xs={12}>
-              <Typography variant="h4" style={{ color: "#ffffff" }}>
-                <strong>
-                  If you would like to contact me, please reach out to me at:
-                </strong>
+            <Grid item xs={12} style={{ textAlign: "center" }}>
+              <Typography
+                variant="h4"
+                style={{
+                  color: "#ffffff",
+                  fontFamily: "Georgia",
+                  fontStyle: "oblique",
+                }}
+              >
+                If you would like to contact me, you can reach me at:
               </Typography>
             </Grid>
             <Grid item xs={9}>

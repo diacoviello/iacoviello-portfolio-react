@@ -152,7 +152,7 @@ export default function Portfolio() {
             noWrap
             className={classes.title}
           >
-            <strong>D. Iacoviello</strong>
+            <strong>My Resume</strong>
           </Typography>
         </Toolbar>
       </AppBar>
