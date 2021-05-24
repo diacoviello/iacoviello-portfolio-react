@@ -14,12 +14,9 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { mainListItems } from "./listitems.js";
-import myConcertsImg from "../images/concertsHomepage.png";
-import WeatherImg from "../images/weatherDash.png";
-import TeamProfileImg from "../images/teamgeneratorimg.png";
-import MusicQuizImg from "../images/musicQuiz.png";
+import musicCodeImg from "../images/music-code.jpeg";
 import myLogo from "../images/myLogo.png";
+import { mainListItems } from "./listitems.js";
 
 const drawerWidth = 200;
 
@@ -101,13 +98,17 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
-  projectpaper: {
-    height: 350,
-    marginBottom: 50
-  }
+  image: {
+    backgroundImage: `url(${musicCodeImg})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    maxHeight: "90%",
+    maxWidth: "90%",
+  },
 }));
 
-export default function Projects() {
+export default function Portfolio() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
@@ -155,7 +156,7 @@ export default function Projects() {
             noWrap
             className={classes.title}
           >
-            <strong>Here are some of my projects:</strong>
+            <strong>Hi, I'm David Iacoviello.</strong>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -178,79 +179,31 @@ export default function Projects() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3} justify="space-evenly">
-            {/* myConcerts */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography>
-                  <strong>myConcerts</strong>
-                </Typography>
-                <a
-                  href="https://myconcerts-grp5.herokuapp.com/"
-                  target="_blank"
-                >
-                  <img
-                    src={`${myConcertsImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </a>
-              </Paper>
-            </Grid>
-            {/* Weather */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography>
-                  <strong>Weather App</strong>
-                </Typography>
-                <a
-                  href="https://diacoviello.github.io/Weather/"
-                  target="_blank"
-                >
-                  <img
-                    src={`${WeatherImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </a>
-              </Paper>
-            </Grid>
-            {/* Team Profile */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography>
-                  <strong>Team Profile Generator</strong>
-                </Typography>
-                <a
-                  href="https://github.com/diacoviello/TeamProfileGen"
-                  target="_blank"
-                >
-                  <img
-                    src={`${TeamProfileImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </a>
-              </Paper>
-            </Grid>
-            {/* Music Quiz */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography>
-                  <strong>Musical Knowledge Quiz: Timed</strong>
-                </Typography>
-                <a
-                  href="https://diacoviello.github.io/OnlineQuiz/"
-                  target="_blank"
-                >
-                  <img
-                    src={`${MusicQuizImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </a>
-              </Paper>
-            </Grid>
+          <Grid container spacing={3} justify="center">
+            <img src={musicCodeImg} className={classes.image}></img>
+            <Paper
+              style={{
+                maxWidth: "90%",
+                maxHeight: "90%",
+                color: "white",
+                backgroundColor: "#9433A2",
+                padding: 15,
+              }}
+            >
+              <Typography>
+                <h3>
+                  Full Stack web developer with a heavy background in music
+                  education to provide unique perspectives on how end-users
+                  interact with websites and software platforms. Earned a
+                  certificate in Full Stack Web Development from the Rutgers
+                  University Coding Boot Camp. Critical thinker and creative
+                  problem-solver with a passion to learn new things and achieve
+                  goals and aspirations. Strengths include, but aren’t limited
+                  to, creativity, dedication, loyalty, and a passion for problem
+                  solving.
+                </h3>
+              </Typography>
+            </Paper>
           </Grid>
         </Container>
       </main>

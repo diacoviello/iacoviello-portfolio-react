@@ -6,6 +6,7 @@ import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
@@ -14,12 +15,11 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { mainListItems } from "./listitems.js";
-import myConcertsImg from "../images/concertsHomepage.png";
-import WeatherImg from "../images/weatherDash.png";
-import TeamProfileImg from "../images/teamgeneratorimg.png";
-import MusicQuizImg from "../images/musicQuiz.png";
+import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk";
+import gmailImg from "../images/gmail.png";
+import linkedinImg from "../images/linkedin-logo.png";
 import myLogo from "../images/myLogo.png";
+import { mainListItems } from "./listitems.js";
 
 const drawerWidth = 200;
 
@@ -101,13 +101,9 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
-  projectpaper: {
-    height: 350,
-    marginBottom: 50
-  }
 }));
 
-export default function Projects() {
+export default function Portfolio() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
@@ -155,7 +151,7 @@ export default function Projects() {
             noWrap
             className={classes.title}
           >
-            <strong>Here are some of my projects:</strong>
+            <strong>Thanks for stopping by!</strong>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -178,77 +174,61 @@ export default function Projects() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3} justify="space-evenly">
-            {/* myConcerts */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography>
-                  <strong>myConcerts</strong>
-                </Typography>
-                <a
-                  href="https://myconcerts-grp5.herokuapp.com/"
-                  target="_blank"
-                >
-                  <img
-                    src={`${myConcertsImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </a>
-              </Paper>
+          <Grid container spacing={3} justify="center">
+            <Grid item xs={12} style={{ textAlign: "center" }}>
+              <Typography
+                variant="h4"
+                style={{
+                  color: "#ffffff",
+                  fontFamily: "Georgia",
+                  fontStyle: "oblique",
+                }}
+              >
+                If you would like to contact me, you can reach me at:
+              </Typography>
             </Grid>
-            {/* Weather */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography>
-                  <strong>Weather App</strong>
-                </Typography>
-                <a
-                  href="https://diacoviello.github.io/Weather/"
-                  target="_blank"
-                >
-                  <img
-                    src={`${WeatherImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </a>
-              </Paper>
-            </Grid>
-            {/* Team Profile */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography>
-                  <strong>Team Profile Generator</strong>
-                </Typography>
-                <a
-                  href="https://github.com/diacoviello/TeamProfileGen"
-                  target="_blank"
-                >
-                  <img
-                    src={`${TeamProfileImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </a>
-              </Paper>
-            </Grid>
-            {/* Music Quiz */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography>
-                  <strong>Musical Knowledge Quiz: Timed</strong>
-                </Typography>
-                <a
-                  href="https://diacoviello.github.io/OnlineQuiz/"
-                  target="_blank"
-                >
-                  <img
-                    src={`${MusicQuizImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </a>
+            <Grid item xs={9}>
+              <Paper style={{ backgroundColor: "#9433A2", padding: 15 }}>
+                <List>
+                  <ListItem
+                    component="a"
+                    href="mailto: diacovmusic@gmail.com"
+                    target="_blank"
+                  >
+                    <img
+                      src={gmailImg}
+                      style={{ height: 50, width: 50, margin: 10 }}
+                    ></img>
+                    <Typography style={{ color: "#ffffff" }}>
+                      <h4>diacovmusic@gmail.com</h4>
+                    </Typography>
+                  </ListItem>
+                  <ListItem
+                    component="a"
+                    href="https://www.linkedin.com/in/david-iacoviello-2ab05348/"
+                    target="_blank"
+                  >
+                    <img
+                      src={linkedinImg}
+                      style={{ height: 50, width: 50, margin: 10 }}
+                    ></img>
+                    <Typography style={{ color: "#ffffff" }}>
+                      <h4>Linked-In</h4>
+                    </Typography>
+                  </ListItem>
+                  <ListItem
+                    component="a"
+                    href="tel:732-947-0068"
+                    target="_blank"
+                  >
+                    <PhoneInTalkIcon
+                      style={{ height: 50, width: 50, margin: 10 }}
+                    />
+                    <Typography style={{ color: "#ffffff" }}>
+                      <h4>CLICK TO CALL</h4>
+                    </Typography>
+                  </ListItem>
+                </List>
               </Paper>
             </Grid>
           </Grid>
