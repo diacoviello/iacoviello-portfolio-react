@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Link, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Link,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
@@ -118,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
     verticalAlign: "middle",
     display: "inline",
     height: "7vh",
-    width: "7vh"
+    width: "7vh",
   },
 }));
 
@@ -170,15 +175,6 @@ function App() {
             >
               <strong>
                 <Switch>
-                  <Route
-                    exact
-                    path={["/iacoviello-portfolio-react"]}
-                    render={() => {
-                      return (
-                        <Redirect to="/" />
-                      );
-                    }}
-                  />
                   <Route exact path={["/"]}>
                     Meet David Iacoviello:
                   </Route>
@@ -259,18 +255,41 @@ function App() {
         </Drawer>
         <main className={classes.content}>
           <Switch>
-            <Route exact path={["/"]}>
-              <Portfolio />
-            </Route>
-            <Route exact path={["/projects"]}>
-              <Projects />
-            </Route>
-            <Route exact path={["/resume"]}>
-              <Resume />
-            </Route>
-            <Route exact path={["/contact"]}>
-              <Contact />
-            </Route>
+            <Route
+              exact
+              path={["/iacoviello-portfolio-react"]}
+              render={() => {
+                return <Redirect to="/" />;
+              }}
+            />
+            <Route
+              exact
+              path={["/"]}
+              render={(routerProps) => <Portfolio routerProps={routerProps} />}
+            />
+            {/* <Portfolio />
+            </Route> */}
+            <Route
+              exact
+              path={["/projects"]}
+              render={(routerProps) => <Projects routerProps={routerProps} />}
+            />
+            {/* <Projects />
+            </Route> */}
+            <Route
+              exact
+              path={["/resume"]}
+              render={(routerProps) => <Resume routerProps={routerProps} />}
+            />
+            {/* <Resume />
+            </Route> */}
+            <Route
+              exact
+              path={["/contact"]}
+              render={(routerProps) => <Contact routerProps={routerProps} />}
+            />
+              {/* <Contact />
+            </Route> */}
           </Switch>
         </main>
       </div>
