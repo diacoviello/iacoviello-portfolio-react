@@ -136,6 +136,8 @@ function App() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  
+console.log("This is the process.env", process.env.PUBLIC_URL);
 
   return (
     <div className="App">
@@ -255,13 +257,13 @@ function App() {
         </Drawer>
         <main className={classes.content}>
           <Switch>
-            <Route
+            {/* <Route
               exact
               path={["/iacoviello-portfolio-react"]}
               render={() => {
                 return <Redirect to="/" />;
               }}
-            />
+            /> */}
             <Route
               exact
               path={["/"]}

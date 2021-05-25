@@ -5,11 +5,9 @@ import './index.css';
 import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router basename={process.env.PUBLIC_URL}>
       <App />
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById("root")
 );
 
