@@ -1,6 +1,6 @@
 {
-  "homepage": "https://diacoviello.github.io/iacoviello-portfolio-react",
   "name": "iacoviello-portfolio-react",
+  "homepage": "https://diacoviello.github.io/iacoviello-portfolio-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
