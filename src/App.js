@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   BrowserRouter as Link,
   Route,
@@ -127,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function App() {
+function AppBarComp() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
@@ -136,167 +136,396 @@ function App() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  
-console.log("This is the process.env", process.env.PUBLIC_URL);
+
+  console.log(classes.root);
 
   return (
-    <div className="App">
-      <div className={classes.root}>
-        <CssBaseline />
-        <AppBar
-          position="absolute"
-          className={clsx(classes.appBar, open && classes.appBarShift)}
-          style={{ backgroundColor: "#9433A2" }}
-        >
-          <Toolbar className={classes.toolbar}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              className={clsx(
-                classes.menuButton,
-                open && classes.menuButtonHidden
-              )}
-            >
-              <MenuIcon />
-            </IconButton>
-            <img
-              alt="myLogo"
-              src={myLogo}
-              style={{}}
-              className={classes.logo}
-            ></img>
-            <Typography
-              component="h1"
-              variant="h4"
-              color="inherit"
-              style={{ paddingLeft: "15px", fontFamily: "Garamond" }}
-              noWrap
-              className={classes.title}
-            >
-              <strong>
-                <Switch>
-                  <Route exact path={["/"]}>
-                    Meet David Iacoviello:
-                  </Route>
-                  <Route exact path={["/projects"]}>
-                    Some Projects I've done:
-                  </Route>
-                  <Route exact path={["/resume"]}>
-                    My Resume:
-                  </Route>
-                  <Route exact path={["/contact"]}>
-                    Contact Me:
-                  </Route>
-                </Switch>
-              </strong>
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-          }}
-          open={open}
-          style={{ backgroundColor: "#9433A2" }}
-        >
-          <div className={classes.toolbarIcon}>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <Divider />
+    <div>
+      <CssBaseline />
+      <AppBar
+        position="absolute"
+        className={clsx(classes.appBar, open && classes.appBarShift)}
+        style={{ backgroundColor: "#9433A2" }}
+      ></AppBar></div>
+  );
+};
 
-          <List>
-            <div>
-              <Link to="/">
-                <ListItem button component="a" href="/">
-                  <ListItemIcon style={{ color: "#ffffff" }}>
-                    <PersonIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="About Me"
-                    style={{ color: "#ffffff" }}
-                  />
-                </ListItem>
-              </Link>
-              <Link to="/projects">
-                <ListItem button component="a" href="/projects">
-                  <ListItemIcon style={{ color: "#ffffff" }}>
-                    <WorkIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Projects"
-                    style={{ color: "#ffffff" }}
-                  />
-                </ListItem>
-              </Link>
-              <Link to="/resume">
-                <ListItem button component="a" href="/resume">
-                  <ListItemIcon style={{ color: "#ffffff" }}>
-                    <ListAltIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Resume" style={{ color: "#ffffff" }} />
-                </ListItem>
-              </Link>
-              <Link to="/contact">
-                <ListItem button component="a" href="/contact">
-                  <ListItemIcon style={{ color: "#ffffff" }}>
-                    <ContactMailIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Contact Me"
-                    style={{ color: "#ffffff" }}
-                  />
-                </ListItem>
-              </Link>
-            </div>
-          </List>
-        </Drawer>
-        <main className={classes.content}>
-          <Switch>
-            {/* <Route
+function ToolbarComp() {
+  
+
+};
+
+function DrawerComp() {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <Drawer
+      variant="permanent"
+      classes={{
+        paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+      }}
+      open={open}
+      style={{ backgroundColor: "#9433A2" }}
+    >
+      <div className={classes.toolbarIcon}>
+        <IconButton onClick={handleDrawerClose}>
+          <ChevronLeftIcon />
+        </IconButton>
+      </div>
+      <Divider />
+
+      <List>
+          
+            <ListItem button component="a" href="/">
+              <ListItemIcon style={{ color: "#ffffff" }}>
+                <PersonIcon />
+              </ListItemIcon>
+              <ListItemText primary="About Me" style={{ color: "#ffffff" }} />
+            </ListItem>
+      
+          
+            <ListItem button component="a" href="/projects">
+              <ListItemIcon style={{ color: "#ffffff" }}>
+                <WorkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Projects" style={{ color: "#ffffff" }} />
+            </ListItem>
+      
+          
+            <ListItem button component="a" href="/resume">
+              <ListItemIcon style={{ color: "#ffffff" }}>
+                <ListAltIcon />
+              </ListItemIcon>
+              <ListItemText primary="Resume" style={{ color: "#ffffff" }} />
+            </ListItem>
+       
+          
+            <ListItem button component="a" href="/contact">
+              <ListItemIcon style={{ color: "#ffffff" }}>
+                <ContactMailIcon />
+              </ListItemIcon>
+              <ListItemText primary="Contact Me" style={{ color: "#ffffff" }} />
+            </ListItem>
+       
+      </List>
+    </Drawer>
+  );
+};
+
+class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      open: false,
+    };
+  };
+
+  
+
+  componentDidMount() {
+    console.log("Mounting ", this.state);
+    
+  }
+
+  render() {
+const closed = !this.open;
+
+const handleDrawerOpen = () => {
+  this.open(true);
+};
+const handleDrawerClose = () => {
+  this.open(false);
+};
+    // console.log(useStyles.content);
+    console.log("This is the process.env", process.env.PUBLIC_URL);
+
+    return (
+      <div className="App">
+        <div style={{ display: "flex" }}>
+          <AppBarComp>
+            <Toolbar style={{ paddingRight: 24 }}>
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                className={clsx(
+                  { marginRight: 36 },
+                  this.open && { display: "none" }
+                )}
+              >
+                <MenuIcon />
+              </IconButton>
+              <img
+                alt="myLogo"
+                src={myLogo}
+                style={{
+                  verticalAlign: "middle",
+                  display: "inline",
+                  height: "7vh",
+                  width: "7vh",
+                }}
+              />
+              <Typography
+                color="inherit"
+                style={{
+                  paddingLeft: "15px",
+                  fontFamily: "Garamond",
+                  flexGrow: 1,
+                }}
+                noWrap
+              >
+                <strong>
+                  <Switch>
+                    <Route exact path={["/"]}>
+                      Meet David Iacoviello:
+                    </Route>
+                    <Route exact path={["/projects"]}>
+                      Some Projects I've done:
+                    </Route>
+                    <Route exact path={["/resume"]}>
+                      My Resume:
+                    </Route>
+                    <Route exact path={["/contact"]}>
+                      Contact Me:
+                    </Route>
+                  </Switch>
+                </strong>
+              </Typography>
+            </Toolbar>
+          </AppBarComp>
+          <DrawerComp />
+          <main style={{ flexGrow: 1, height: "100vh", overflow: "auto" }}>
+            <Link to="/"></Link>
+            <Link to="/projects"></Link>
+            <Link to="/resume"></Link>
+            <Link to="/contact"></Link>
+
+            <Switch>
+              {/* <Route
               exact
               path={["/iacoviello-portfolio-react"]}
               render={() => {
                 return <Redirect to="/" />;
               }}
             /> */}
-            <Route
-              exact
-              path={["/"]}
-              render={(routerProps) => <Portfolio routerProps={routerProps} />}
-            />
-            {/* <Portfolio />
+              <Route
+                exact
+                path={["/"]}
+                render={(routerProps) => (
+                  <Portfolio routerProps={routerProps} />
+                )}
+              />
+              {/* <Portfolio />
             </Route> */}
-            <Route
-              exact
-              path={["/projects"]}
-              render={(routerProps) => <Projects routerProps={routerProps} />}
-            />
-            {/* <Projects />
+              <Route
+                exact
+                path={["/projects"]}
+                render={(routerProps) => <Projects routerProps={routerProps} />}
+              />
+              {/* <Projects />
             </Route> */}
-            <Route
-              exact
-              path={["/resume"]}
-              render={(routerProps) => <Resume routerProps={routerProps} />}
-            />
-            {/* <Resume />
+              <Route
+                exact
+                path={["/resume"]}
+                render={(routerProps) => <Resume routerProps={routerProps} />}
+              />
+              {/* <Resume />
             </Route> */}
-            <Route
-              exact
-              path={["/contact"]}
-              render={(routerProps) => <Contact routerProps={routerProps} />}
-            />
+              <Route
+                exact
+                path={["/contact"]}
+                render={(routerProps) => <Contact routerProps={routerProps} />}
+              />
               {/* <Contact />
             </Route> */}
-          </Switch>
-        </main>
+            </Switch>
+          </main>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+// function App() {
+//   // const classes = useStyles();
+//   // const [open, setOpen] = React.useState(false);
+//   // const handleDrawerOpen = () => {
+//   //   setOpen(true);
+//   // };
+//   // const handleDrawerClose = () => {
+//   //   setOpen(false);
+//   // };
+
+// console.log("This is the process.env", process.env.PUBLIC_URL);
+
+//   return (
+//     <div className="App">
+//       <div className={classes.root}>
+//         <CssBaseline />
+//         <AppBar
+//           position="absolute"
+//           className={clsx(classes.appBar, open && classes.appBarShift)}
+//           style={{ backgroundColor: "#9433A2" }}
+//         >
+//           <Toolbar className={classes.toolbar}>
+//             <IconButton
+//               edge="start"
+//               color="inherit"
+//               aria-label="open drawer"
+//               onClick={handleDrawerOpen}
+//               className={clsx(
+//                 classes.menuButton,
+//                 open && classes.menuButtonHidden
+//               )}
+//             >
+//               <MenuIcon />
+//             </IconButton>
+//             <img
+//               alt="myLogo"
+//               src={myLogo}
+//               style={{}}
+//               className={classes.logo}
+//             ></img>
+//             <Typography
+//               component="h1"
+//               variant="h4"
+//               color="inherit"
+//               style={{ paddingLeft: "15px", fontFamily: "Garamond" }}
+//               noWrap
+//               className={classes.title}
+//             >
+//               <strong>
+//                 <Switch>
+//                   <Route exact path={["/"]}>
+//                     Meet David Iacoviello:
+//                   </Route>
+//                   <Route exact path={["/projects"]}>
+//                     Some Projects I've done:
+//                   </Route>
+//                   <Route exact path={["/resume"]}>
+//                     My Resume:
+//                   </Route>
+//                   <Route exact path={["/contact"]}>
+//                     Contact Me:
+//                   </Route>
+//                 </Switch>
+//               </strong>
+//             </Typography>
+//           </Toolbar>
+//         </AppBar>
+//         <Drawer
+//           variant="permanent"
+//           classes={{
+//             paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+//           }}
+//           open={open}
+//           style={{ backgroundColor: "#9433A2" }}
+//         >
+//           <div className={classes.toolbarIcon}>
+//             <IconButton onClick={handleDrawerClose}>
+//               <ChevronLeftIcon />
+//             </IconButton>
+//           </div>
+//           <Divider />
+
+//           <List>
+//             <div>
+//               <Link to="/">
+//                 <ListItem button component="a" href="/">
+//                   <ListItemIcon style={{ color: "#ffffff" }}>
+//                     <PersonIcon />
+//                   </ListItemIcon>
+//                   <ListItemText
+//                     primary="About Me"
+//                     style={{ color: "#ffffff" }}
+//                   />
+//                 </ListItem>
+//               </Link>
+//               <Link to="/projects">
+//                 <ListItem button component="a" href="/projects">
+//                   <ListItemIcon style={{ color: "#ffffff" }}>
+//                     <WorkIcon />
+//                   </ListItemIcon>
+//                   <ListItemText
+//                     primary="Projects"
+//                     style={{ color: "#ffffff" }}
+//                   />
+//                 </ListItem>
+//               </Link>
+//               <Link to="/resume">
+//                 <ListItem button component="a" href="/resume">
+//                   <ListItemIcon style={{ color: "#ffffff" }}>
+//                     <ListAltIcon />
+//                   </ListItemIcon>
+//                   <ListItemText primary="Resume" style={{ color: "#ffffff" }} />
+//                 </ListItem>
+//               </Link>
+//               <Link to="/contact">
+//                 <ListItem button component="a" href="/contact">
+//                   <ListItemIcon style={{ color: "#ffffff" }}>
+//                     <ContactMailIcon />
+//                   </ListItemIcon>
+//                   <ListItemText
+//                     primary="Contact Me"
+//                     style={{ color: "#ffffff" }}
+//                   />
+//                 </ListItem>
+//               </Link>
+//             </div>
+//           </List>
+//         </Drawer>
+//         <main className={classes.content}>
+//           <Switch>
+//             {/* <Route
+//               exact
+//               path={["/iacoviello-portfolio-react"]}
+//               render={() => {
+//                 return <Redirect to="/" />;
+//               }}
+//             /> */}
+//             <Route
+//               exact
+//               path={["/"]}
+//               render={(routerProps) => <Portfolio routerProps={routerProps} />}
+//             />
+//             {/* <Portfolio />
+//             </Route> */}
+//             <Route
+//               exact
+//               path={["/projects"]}
+//               render={(routerProps) => <Projects routerProps={routerProps} />}
+//             />
+//             {/* <Projects />
+//             </Route> */}
+//             <Route
+//               exact
+//               path={["/resume"]}
+//               render={(routerProps) => <Resume routerProps={routerProps} />}
+//             />
+//             {/* <Resume />
+//             </Route> */}
+//             <Route
+//               exact
+//               path={["/contact"]}
+//               render={(routerProps) => <Contact routerProps={routerProps} />}
+//             />
+//               {/* <Contact />
+//             </Route> */}
+//           </Switch>
+//         </main>
+//       </div>
+//     </div>
+//   );
+// }
 
 export default App;

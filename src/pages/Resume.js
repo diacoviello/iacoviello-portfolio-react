@@ -38,15 +38,13 @@ export default function Resume() {
 
 
   return (
-    <div className={classes.root}>
-      <main className={classes.content}>
+    <div>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={10}>
             <SinglePage style={{ width: "100%" }} pdf={ResumePDF} />
           </Grid>
         </Container>
-      </main>
     </div>
   );
 }

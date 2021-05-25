@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import "../../src/App.css";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -31,74 +32,91 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contact() {
   const classes = useStyles();
+  const [inHover, setHover] = useState(false);
 
   return (
-    <div className={classes.root}>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3} justify="center">
-            <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Typography
-                variant="h4"
-                style={{
-                  color: "#ffffff",
-                  fontFamily: "Georgia",
-                  fontStyle: "oblique",
-                }}
-              >
-                If you would like to contact me, you can reach me at:
-              </Typography>
-            </Grid>
-            <Grid item xs={9}>
-              <Paper style={{ backgroundColor: "#9433A2", padding: 15 }}>
-                <List>
-                  <ListItem
-                    component="a"
-                    href="mailto: diacovmusic@gmail.com"
-                    target="_blank"
-                  >
-                    <img
-                      alt="gmail"
-                      src={gmailImg}
-                      style={{ height: 50, width: 50, margin: 10 }}
-                    ></img>
-                    <Typography style={{ color: "#ffffff" }}>
-                      <h4>diacovmusic@gmail.com</h4>
-                    </Typography>
-                  </ListItem>
-                  <ListItem
-                    component="a"
-                    href="https://www.linkedin.com/in/david-iacoviello-2ab05348/"
-                    target="_blank"
-                  >
-                    <img
-                      alt="linkedin"
-                      src={linkedinImg}
-                      style={{ height: 50, width: 50, margin: 10 }}
-                    ></img>
-                    <Typography style={{ color: "#ffffff" }}>
-                      <h4>Linked-In</h4>
-                    </Typography>
-                  </ListItem>
-                  <ListItem
-                    component="a"
-                    href="tel:732-947-0068"
-                    target="_blank"
-                  >
-                    <PhoneInTalkIcon
-                      style={{ height: 50, width: 50, margin: 10 }}
-                    />
-                    <Typography style={{ color: "#ffffff" }}>
-                      <h4>CLICK TO CALL</h4>
-                    </Typography>
-                  </ListItem>
-                </List>
-              </Paper>
-            </Grid>
+    <div>
+      <div className={classes.appBarSpacer} />
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={3} justify="center">
+          <Grid item xs={12} style={{ textAlign: "center" }}>
+            <Typography
+              style={{
+                color: "#ffffff",
+                fontFamily: "Georgia",
+                fontStyle: "oblique",
+                fontSize: "35px",
+              }}
+            >
+              If you would like to contact me, you can reach me at:
+            </Typography>
           </Grid>
-        </Container>
-      </main>
+          <Grid item xs={9}>
+            <Paper style={{ backgroundColor: "#9433A2", padding: 15 }}>
+              <List>
+                <ListItem
+                  component="a"
+                  href="mailto: diacovmusic@gmail.com"
+                  target="_blank"
+                  style={{ maxWidth: "90%" }}
+                >
+                  <img
+                    alt="gmail"
+                    src={gmailImg}
+                    style={{ height: 50, width: 50, margin: 10 }}
+                  ></img>
+                  <Typography
+                    style={{
+                      paddingLeft: "15px",
+                      fontSize: "25px",
+                    }}
+                  >
+                    <strong>diacovmusic@gmail.com</strong>
+                  </Typography>
+                </ListItem>
+                <ListItem
+                  component="a"
+                  href="https://www.linkedin.com/in/david-iacoviello-2ab05348/"
+                  target="_blank"
+                  style={{ maxWidth: "90%" }}
+                >
+                  <img
+                    alt="linkedin"
+                    src={linkedinImg}
+                    style={{ height: 50, width: 50, margin: 10 }}
+                  ></img>
+                  <Typography
+                    style={{
+                      paddingLeft: "15px",
+                      fontSize: "25px",
+                    }}
+                  >
+                    <strong>Linked-In</strong>
+                  </Typography>
+                </ListItem>
+                <ListItem
+                  component="a"
+                  href="tel:732-947-0068"
+                  target="_blank"
+                  style={{ maxWidth: "90%" }}
+                >
+                  <PhoneInTalkIcon
+                    style={{ height: 50, width: 50, margin: 10 }}
+                  />
+                  <Typography
+                    style={{
+                      paddingLeft: "15px",
+                      fontSize: "25px",
+                    }}
+                  >
+                    <strong>CLICK TO CALL</strong>
+                  </Typography>
+                </ListItem>
+              </List>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
     </div>
   );
 }

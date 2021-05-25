@@ -41,8 +41,7 @@ export default function Projects() {
   const classes = useStyles();
   
   return (
-    <div className={classes.root}>
-      <main className={classes.content}>
+    <div>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3} justify="space-evenly">
@@ -124,7 +123,6 @@ export default function Projects() {
             </Grid>
           </Grid>
         </Container>
-      </main>
     </div>
   );
 }

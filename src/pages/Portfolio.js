@@ -1,6 +1,6 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import '../App.css';
+import "../App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
@@ -52,8 +52,7 @@ export default function Portfolio() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <main className={classes.content}>
+    <div>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <CssBaseline />
@@ -64,32 +63,30 @@ export default function Portfolio() {
                 src={musicCodeImg}
                 className={classes.image}
               ></img> */}
-              <Typography style={{ position: "absolute", bottom: 0 }}>
+              <Typography
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  padding: "2%",
+                  fontFamily: "Impact",
+                  fontSize: "23px",
+                }}
+              >
                 <Box lineHeight={2} letterSpacing={2}>
-                  <h3
-                    style={{
-                      padding: "2%",
-                      fontFamily: "Impact",
-                      fontSize: "23px"
-                    }}
-                    className="text-outline"
-                  >
-                    Full Stack web developer with a heavy background in music
-                    education to provide unique perspectives on how end-users
-                    interact with websites and software platforms. Earned a
-                    certificate in Full Stack Web Development from the Rutgers
-                    University Coding Boot Camp. Critical thinker and creative
-                    problem-solver with a passion to learn new things and
-                    achieve goals and aspirations. Strengths include, but aren’t
-                    limited to, creativity, dedication, loyalty, and a passion
-                    for problem solving.
-                  </h3>
+                  Full Stack web developer with a heavy background in music
+                  education to provide unique perspectives on how end-users
+                  interact with websites and software platforms. Earned a
+                  certificate in Full Stack Web Development from the Rutgers
+                  University Coding Boot Camp. Critical thinker and creative
+                  problem-solver with a passion to learn new things and achieve
+                  goals and aspirations. Strengths include, but aren’t limited
+                  to, creativity, dedication, loyalty, and a passion for problem
+                  solving.
                 </Box>
               </Typography>
             </Paper>
           </Grid>
         </Container>
-      </main>
     </div>
   );
 }
