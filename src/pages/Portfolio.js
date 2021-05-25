@@ -1,5 +1,4 @@
 import React from "react";
-import ScaleText from "react-scale-text";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "../App.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -70,7 +69,7 @@ export default function Portfolio() {
                   <Box height="40vh"></Box>
                 </Grid>
                 <Grid item xs={12} style={{ height: "90%", width: "90%" }}>
-                  <ScaleText widthOnly={true}>
+           
                     <Typography
                       lineHeight={2.3}
                       letterSpacing={2}
@@ -94,7 +93,7 @@ export default function Portfolio() {
                         dedication, loyalty, and a passion for problem solving.
                       </Box>
                     </Typography>
-                  </ScaleText>
+               
                 </Grid>
               </Grid>
             </CardContent>

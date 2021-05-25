@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import ScaleText from "react-scale-text";
+import React from "react";
+import ReactDOM from "react-dom";
 import {
-  BrowserRouter as Link,
+  BrowserRouter as Router, Link,
   Route,
   Switch,
   Redirect,
@@ -11,12 +11,13 @@ import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
+import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
@@ -41,11 +42,13 @@ const useStyles = makeStyles(
     },
     toolbar: {
       paddingRight: 24, // keep right padding when drawer closed
+      padding: "12px",
     },
     toolbarIcon: {
       display: "flex",
       alignItems: "center",
       justifyContent: "flex-end",
+      height: "12px",
       padding: "0 8px",
       ...theme.mixins.toolbar,
     },
@@ -122,27 +125,39 @@ const useStyles = makeStyles(
       maxWidth: "90%",
     },
     logo: {
+      align: "left",
       verticalAlign: "middle",
       display: "inline",
-      height: "7vh",
-      width: "7vh",
+      height: "10vh",
+      width: "10vh",
+      margin: "0px",
+      padding: "0px",
     },
     sideItems: {
       height: "12vh",
+      marginTop: "15px",
+      marginBottom: "10px",
     },
     icons: {
       color: "#ffffff",
       fontSize: "42px",
+      marginLeft: "0vw",
     },
     sideText: {
       fontSize: "23px",
       color: "#ffffff",
       fontFamily: "Times New Roman",
       fontWeight: "bold",
-
-    }
+    },
   }),
   { withTheme: true }
+);
+
+ReactDOM.render(
+  <Router basename={process.env.PUBLIC_URL}>
+    <App />
+  </Router>,
+  document.getElementById("root")
 );
 
 function App() {
@@ -177,19 +192,19 @@ function App() {
                 open && classes.menuButtonHidden
               )}
             >
-              <MenuIcon />
+              <MenuIcon style={{ color: "#ffffff", fontSize: "30px" }} />
             </IconButton>
-            <img
+            {/* <img
               alt="myLogo"
               src={myLogo}
               style={{}}
               className={classes.logo}
-            ></img>
+            ></img> */}
             <Typography
               component="h1"
               variant="h3"
               color="inherit"
-              style={{ paddingLeft: "15px", fontFamily: "Garamond" }}
+              style={{ fontFamily: "Garamond" }}
               noWrap
               className={classes.title}
             >
@@ -220,11 +235,35 @@ function App() {
           open={open}
           style={{ backgroundColor: "#9433A2" }}
         >
-          <div className={classes.toolbarIcon}>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
+          <div className={classes.toolbarIcon} style={{ height: "11vh" }}>
+          {open === true ? 
+            <Grid container xs={12} justify="space-between">
+              <Grid item>
+                <img
+                  alt="myLogo"
+                  src={myLogo}
+                  style={{}}
+                  onClick={{display: 'none'}}
+                  className={clsx(
+                    classes.logo,
+                    !open && classes.menuButtonHidden
+                  )}
+                />
+              </Grid>
+              <Grid item>
+                <IconButton onClick={handleDrawerClose}>
+                  <ChevronLeftIcon
+                    style={{
+                      float: "right",
+                      color: "#ffffff",
+                      fontSize: "30px",
+                    }}
+                  />
+                </IconButton>
+              </Grid>
+            </Grid> : null}
           </div>
+
           <Divider />
 
           <List>
@@ -234,6 +273,7 @@ function App() {
                   button
                   component="a"
                   href="/"
+                  style={{ marginTop: "25px" }}
                   className={classes.sideItems}
                 >
                   <ListItemIcon>
@@ -290,7 +330,6 @@ function App() {
                   <ListItemText
                     classes={{ primary: classes.sideText }}
                     primary="Contact Me"
-            
                   />
                 </ListItem>
               </Link>
