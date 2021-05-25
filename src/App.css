@@ -41,7 +41,7 @@
   text-shadow: 1px 1px 2px black, 0 0 25px rgb(104, 13, 125), 0 0 19px darkblue;
 }
 
-a {
+.contact {
   text-decoration: none;
   position: relative;
   display: block;
@@ -51,16 +51,16 @@ a {
   transition: color 0.1s, background-color 0.1s;
   color: #000;
 }
-a:hover {
+.contact:hover {
   color: #4dd0e1;
   text-decoration-line: underline;
   font-style: oblique;
 }
-a:focus, a:active {
+.contact:focus, .contact:active {
   color: #00bcd4;
 }
 
-a::before {
+.contact::before {
   content: '';
   display: block;
   position: absolute;
@@ -77,12 +77,12 @@ a::before {
   transition: color 0.1s, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
-a:active::before {
+.contact:active::before {
   background-color: #00bcd4;
 }
 
-a:hover::before,
-a:focus::before {
+.contact:hover::before,
+.contact:focus::before {
   -webkit-transform-origin: center top;
           transform-origin: center top;
   -webkit-transform: scale(1, 1);

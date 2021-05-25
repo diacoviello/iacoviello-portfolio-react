@@ -1,12 +1,14 @@
 import React from "react";
+import ScaleText from "react-scale-text";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "../App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 import Box from "@material-ui/core/Box";
-import Paper from "@material-ui/core/Paper";
 import musicCodeImg from "../images/music-code.jpeg";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,15 +30,14 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
-  paperContainer: {
+  cardContainer: {
     backgroundImage: `url(${musicCodeImg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     width: "90vw",
-    height: "90vh",
+    height: "88vh",
     color: "white",
     backgroundColor: "#9433A2",
-    padding: "15px",
   },
   image: {
     backgroundImage: `url(${musicCodeImg})`,
@@ -53,40 +54,53 @@ export default function Portfolio() {
 
   return (
     <div>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <CssBaseline />
-          <Grid container spacing={3} justify="center">
-            <Paper className={classes.paperContainer}>
+      <CssBaseline />
+      <div className={classes.appBarSpacer} />
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={3} justify="center" style={{ height: "90vh" }}>
+          <Card className={classes.cardContainer}>
+            <CardContent>
               {/* <img
                 alt="music-code"
                 src={musicCodeImg}
                 className={classes.image}
               ></img> */}
-              <Typography
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  padding: "2%",
-                  fontFamily: "Impact",
-                  fontSize: "23px",
-                }}
-              >
-                <Box lineHeight={2} letterSpacing={2}>
-                  Full Stack web developer with a heavy background in music
-                  education to provide unique perspectives on how end-users
-                  interact with websites and software platforms. Earned a
-                  certificate in Full Stack Web Development from the Rutgers
-                  University Coding Boot Camp. Critical thinker and creative
-                  problem-solver with a passion to learn new things and achieve
-                  goals and aspirations. Strengths include, but aren’t limited
-                  to, creativity, dedication, loyalty, and a passion for problem
-                  solving.
-                </Box>
-              </Typography>
-            </Paper>
-          </Grid>
-        </Container>
+              <Grid container direction="column">
+                <Grid item xs={12}>
+                  <Box height="40vh"></Box>
+                </Grid>
+                <Grid item xs={12} style={{ height: "90%", width: "90%" }}>
+                  <ScaleText widthOnly={true}>
+                    <Typography
+                      lineHeight={2.3}
+                      letterSpacing={2}
+                      style={{
+                        bottom: 0,
+                        padding: "2%",
+                        fontFamily: "Arial Black",
+                        fontSize: "23px",
+                      }}
+                      className="text-outline"
+                    >
+                      <Box lineHeight={1.8} letterSpacing={2}>
+                        Full Stack web developer with a heavy background in
+                        music education to provide unique perspectives on how
+                        end-users interact with websites and software platforms.
+                        Earned a certificate in Full Stack Web Development from
+                        the Rutgers University Coding Boot Camp. Critical
+                        thinker and creative problem-solver with a passion to
+                        learn new things and achieve goals and aspirations.
+                        Strengths include, but aren’t limited to, creativity,
+                        dedication, loyalty, and a passion for problem solving.
+                      </Box>
+                    </Typography>
+                  </ScaleText>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Container>
     </div>
   );
 }

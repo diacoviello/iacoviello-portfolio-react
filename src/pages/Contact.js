@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contact() {
   const classes = useStyles();
-  const [inHover, setHover] = useState(false);
 
   return (
     <div>
@@ -55,6 +54,7 @@ export default function Contact() {
             <Paper style={{ backgroundColor: "#9433A2", padding: 15 }}>
               <List>
                 <ListItem
+                  className="contact"
                   component="a"
                   href="mailto: diacovmusic@gmail.com"
                   target="_blank"
@@ -75,6 +75,7 @@ export default function Contact() {
                   </Typography>
                 </ListItem>
                 <ListItem
+                  className="contact"
                   component="a"
                   href="https://www.linkedin.com/in/david-iacoviello-2ab05348/"
                   target="_blank"
@@ -95,6 +96,7 @@ export default function Contact() {
                   </Typography>
                 </ListItem>
                 <ListItem
+                  className="contact"
                   component="a"
                   href="tel:732-947-0068"
                   target="_blank"
