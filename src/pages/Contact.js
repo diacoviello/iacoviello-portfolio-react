@@ -59,6 +59,7 @@ export default function Contact() {
                     target="_blank"
                   >
                     <img
+                      alt="gmail"
                       src={gmailImg}
                       style={{ height: 50, width: 50, margin: 10 }}
                     ></img>
@@ -72,6 +73,7 @@ export default function Contact() {
                     target="_blank"
                   >
                     <img
+                      alt="linkedin"
                       src={linkedinImg}
                       style={{ height: 50, width: 50, margin: 10 }}
                     ></img>

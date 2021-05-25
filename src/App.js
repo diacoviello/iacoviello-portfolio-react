@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Link, Route, Switch } from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
@@ -14,8 +14,6 @@ import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import musicCodeImg from "./images/music-code.jpeg";
@@ -27,7 +25,6 @@ import PersonIcon from "@material-ui/icons/Person";
 import WorkIcon from "@material-ui/icons/Work";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
-import { mainListItems } from "./pages/listitems";
 
 const drawerWidth = 200;
 
@@ -117,17 +114,23 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "90%",
     maxWidth: "90%",
   },
+  logo: {
+    verticalAlign: "middle",
+    display: "inline",
+    height: "7vh",
+    width: "7vh"
+  },
 }));
 
 function App() {
-const classes = useStyles();
-const [open, setOpen] = React.useState(false);
-const handleDrawerOpen = () => {
-  setOpen(true);
-};
-const handleDrawerClose = () => {
-  setOpen(false);
-};
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className="App">
@@ -152,22 +155,37 @@ const handleDrawerClose = () => {
               <MenuIcon />
             </IconButton>
             <img
+              alt="myLogo"
               src={myLogo}
               style={{
-                verticalAlign: "middle",
-                display: "inline",
-                height: "7vh",
+                
               }}
+              className={classes.logo}
             ></img>
             <Typography
               component="h1"
               variant="h4"
               color="inherit"
-              style={{ paddingLeft: "10px" }}
+              style={{ paddingLeft: "15px", fontFamily: "Garamond" }}
               noWrap
               className={classes.title}
             >
-              <strong></strong>
+              <strong>
+                <Switch>
+                  <Route exact path={["/"]}>
+                    Meet David Iacoviello:
+                  </Route>
+                  <Route exact path={["/projects"]}>
+                    Some Projects I've done:
+                  </Route>
+                  <Route exact path={["/resume"]}>
+                    My Resume:
+                  </Route>
+                  <Route exact path={["/contact"]}>
+                    Contact Me:
+                  </Route>
+                </Switch>
+              </strong>
             </Typography>
           </Toolbar>
         </AppBar>
@@ -189,7 +207,7 @@ const handleDrawerClose = () => {
           <List>
             <div>
               <Link to="/">
-                <ListItem button>
+                <ListItem button component="a" href="/">
                   <ListItemIcon style={{ color: "#ffffff" }}>
                     <PersonIcon />
                   </ListItemIcon>
@@ -211,7 +229,7 @@ const handleDrawerClose = () => {
                 </ListItem>
               </Link>
               <Link to="/resume">
-                <ListItem button>
+                <ListItem button component="a" href="/resume">
                   <ListItemIcon style={{ color: "#ffffff" }}>
                     <ListAltIcon />
                   </ListItemIcon>
@@ -219,7 +237,7 @@ const handleDrawerClose = () => {
                 </ListItem>
               </Link>
               <Link to="/contact">
-                <ListItem button>
+                <ListItem button component="a" href="/contact">
                   <ListItemIcon style={{ color: "#ffffff" }}>
                     <ContactMailIcon />
                   </ListItemIcon>
