@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Link, Route, Switch, Redirect } from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
@@ -157,9 +157,7 @@ function App() {
             <img
               alt="myLogo"
               src={myLogo}
-              style={{
-                
-              }}
+              style={{}}
               className={classes.logo}
             ></img>
             <Typography
@@ -172,6 +170,15 @@ function App() {
             >
               <strong>
                 <Switch>
+                  <Route
+                    exact
+                    path={["/iacoviello-portfolio-react"]}
+                    render={() => {
+                      return (
+                        <Redirect to="/" />
+                      );
+                    }}
+                  />
                   <Route exact path={["/"]}>
                     Meet David Iacoviello:
                   </Route>
