@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {
-  BrowserRouter as Router, Link,
+  BrowserRouter as Router,
+  Link,
   Route,
   Switch,
   Redirect,
 } from "react-router-dom";
+import "../src/App.css";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import Projects from "./pages/Projects";
@@ -130,6 +132,10 @@ const useStyles = makeStyles(
       display: "inline",
       height: "10vh",
       width: "10vh",
+      maxHeight: "10vh",
+      maxWidth: "10vh",
+      minHeight: "0px",
+      minWidth: "0px",
       margin: "0px",
       padding: "0px",
     },
@@ -236,39 +242,40 @@ function App() {
           style={{ backgroundColor: "#9433A2" }}
         >
           <div className={classes.toolbarIcon} style={{ height: "11vh" }}>
-          {open === true ? 
-            <Grid container xs={12} justify="space-between">
-              <Grid item>
-                <img
-                  alt="myLogo"
-                  src={myLogo}
-                  style={{}}
-                  onClick={{display: 'none'}}
-                  className={clsx(
-                    classes.logo,
-                    !open && classes.menuButtonHidden
-                  )}
-                />
-              </Grid>
-              <Grid item>
-                <IconButton onClick={handleDrawerClose}>
-                  <ChevronLeftIcon
-                    style={{
-                      float: "right",
-                      color: "#ffffff",
-                      fontSize: "30px",
-                    }}
+            {open === true ? (
+              <Grid container xs={12} justify="space-between">
+                <Grid item>
+                  <img
+                    alt="myLogo"
+                    src={myLogo}
+                    style={{}}
+                    onClick={{ display: "none" }}
+                    className={clsx(
+                      classes.logo,
+                      !open && classes.menuButtonHidden
+                    )}
                   />
-                </IconButton>
+                </Grid>
+                <Grid item>
+                  <IconButton onClick={handleDrawerClose}>
+                    <ChevronLeftIcon
+                      style={{
+                        float: "right",
+                        color: "#ffffff",
+                        fontSize: "30px",
+                      }}
+                    />
+                  </IconButton>
+                </Grid>
               </Grid>
-            </Grid> : null}
+            ) : null}
           </div>
 
           <Divider />
 
           <List>
             <div>
-              <Link to="/">
+              <Link to="/" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
                   component="a"
@@ -282,10 +289,11 @@ function App() {
                   <ListItemText
                     classes={{ primary: classes.sideText }}
                     primary="About Me"
+                    className="lively-links"
                   />
                 </ListItem>
               </Link>
-              <Link to="/projects">
+              <Link to="/projects" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
                   component="a"
@@ -298,10 +306,11 @@ function App() {
                   <ListItemText
                     classes={{ primary: classes.sideText }}
                     primary="Projects"
+                    className="lively-links"
                   />
                 </ListItem>
               </Link>
-              <Link to="/resume">
+              <Link to="/resume" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
                   component="a"
@@ -314,10 +323,11 @@ function App() {
                   <ListItemText
                     classes={{ primary: classes.sideText }}
                     primary="Resume"
+                    className="lively-links"
                   />
                 </ListItem>
               </Link>
-              <Link to="/contact">
+              <Link to="/contact" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
                   component="a"
@@ -330,6 +340,7 @@ function App() {
                   <ListItemText
                     classes={{ primary: classes.sideText }}
                     primary="Contact Me"
+                    className="lively-links"
                   />
                 </ListItem>
               </Link>

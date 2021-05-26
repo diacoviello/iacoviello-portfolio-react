@@ -30,13 +30,16 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(4),
   },
   cardContainer: {
+    display: "flex",
     backgroundImage: `url(${musicCodeImg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    margin: "8px",
     width: "90vw",
     height: "88vh",
     color: "white",
     backgroundColor: "#9433A2",
+    alignItems: "flex-end",
   },
   image: {
     backgroundImage: `url(${musicCodeImg})`,
@@ -45,6 +48,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
     maxHeight: "90%",
     maxWidth: "90%",
+  },
+  cardBody: {
+    display: "flex",
+    alignItems: "flex-end",
+  },
+  theBox: {
+    display: "flex",
+    opacity: "1",
   },
 }));
 
@@ -56,45 +67,51 @@ export default function Portfolio() {
       <CssBaseline />
       <div className={classes.appBarSpacer} />
       <Container maxWidth="lg" className={classes.container}>
-        <Grid container spacing={3} justify="center" style={{ height: "90vh" }}>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="flex-end"
+          spacing={3}
+          style={{ height: "90vh" }}
+        >
           <Card className={classes.cardContainer}>
-            <CardContent>
-              {/* <img
+            <CardContent gutterbottom className={classes.cardBody}>
+              <Grid item direction="row" justify="center" alignItems="center">
+                {/* <img
                 alt="music-code"
                 src={musicCodeImg}
                 className={classes.image}
               ></img> */}
-              <Grid container direction="column">
-                <Grid item xs={12}>
-                  <Box height="40vh"></Box>
-                </Grid>
-                <Grid item xs={12} style={{ height: "90%", width: "90%" }}>
-           
-                    <Typography
-                      lineHeight={2.3}
-                      letterSpacing={2}
-                      style={{
-                        bottom: 0,
-                        padding: "2%",
-                        fontFamily: "Arial Black",
-                        fontSize: "23px",
-                      }}
-                      className="text-outline"
-                    >
-                      <Box lineHeight={1.8} letterSpacing={2}>
-                        Full Stack web developer with a heavy background in
-                        music education to provide unique perspectives on how
-                        end-users interact with websites and software platforms.
-                        Earned a certificate in Full Stack Web Development from
-                        the Rutgers University Coding Boot Camp. Critical
-                        thinker and creative problem-solver with a passion to
-                        learn new things and achieve goals and aspirations.
-                        Strengths include, but aren’t limited to, creativity,
-                        dedication, loyalty, and a passion for problem solving.
-                      </Box>
-                    </Typography>
-               
-                </Grid>
+
+                <Typography
+                  lineHeight={2.3}
+                  letterSpacing={2}
+                  style={{
+                    bottom: 0,
+                    padding: "2%",
+                    fontFamily: "Arial Black",
+                    fontSize: "25px",
+                  }}
+                  className="text-outline"
+                >
+                  <Box
+                    display="flex"
+                    lineHeight={2}
+                    letterSpacing={1.5}
+                    className={classes.theBox}
+                  >
+                    Full Stack web developer with a heavy background in music
+                    education to provide unique perspectives on how end-users
+                    interact with websites and software platforms. Earned a
+                    certificate in Full Stack Web Development from the Rutgers
+                    University Coding Boot Camp. Critical thinker and creative
+                    problem-solver with a passion to learn new things and
+                    achieve goals and aspirations. Strengths include, but aren’t
+                    limited to, creativity, dedication, loyalty, and a passion
+                    for problem solving.
+                  </Box>
+                </Typography>
               </Grid>
             </CardContent>
           </Card>

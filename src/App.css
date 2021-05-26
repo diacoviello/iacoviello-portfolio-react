@@ -41,7 +41,7 @@
   text-shadow: 1px 1px 2px black, 0 0 25px rgb(104, 13, 125), 0 0 19px darkblue;
 }
 
-.contact {
+.lively-links {
   text-decoration: none;
   position: relative;
   display: block;
@@ -51,16 +51,16 @@
   transition: color 0.1s, background-color 0.1s;
   color: #000;
 }
-.contact:hover {
+.lively-links:hover {
   color: #4dd0e1;
   text-decoration-line: underline;
   font-style: oblique;
 }
-.contact:focus, .contact:active {
+.lively-links:focus, .lively-links:active {
   color: #00bcd4;
 }
 
-.contact::before {
+.lively-links::before {
   content: '';
   display: block;
   position: absolute;
@@ -77,14 +77,15 @@
   transition: color 0.1s, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
-.contact:active::before {
+.lively-links:active::before {
   background-color: #00bcd4;
 }
 
-.contact:hover::before,
-.contact:focus::before {
+.lively-links:hover::before,
+.lively-links:focus::before {
   -webkit-transform-origin: center top;
           transform-origin: center top;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
 }
+
