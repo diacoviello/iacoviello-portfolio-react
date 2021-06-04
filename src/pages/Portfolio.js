@@ -1,4 +1,5 @@
 import React from "react";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "../App.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -78,11 +79,6 @@ export default function Portfolio() {
           <Card className={classes.cardContainer}>
             <CardContent gutterbottom className={classes.cardBody}>
               <Grid item direction="row" justify="center" alignItems="center">
-                {/* <img
-                alt="music-code"
-                src={musicCodeImg}
-                className={classes.image}
-              ></img> */}
 
                 <Typography
                   lineHeight={2.3}
@@ -91,7 +87,6 @@ export default function Portfolio() {
                     bottom: 0,
                     padding: "2%",
                     fontFamily: "Arial Black",
-                    fontSize: "25px",
                   }}
                   className="text-outline"
                 >
@@ -108,7 +103,7 @@ export default function Portfolio() {
                     University Coding Boot Camp. Critical thinker and creative
                     problem-solver with a passion to learn new things and
                     achieve goals and aspirations. Strengths include, but aren’t
-                    limited to, creativity, dedication, loyalty, and a passion
+                    limited to: creativity, dedication, loyalty, and a passion
                     for problem solving.
                   </Box>
                 </Typography>

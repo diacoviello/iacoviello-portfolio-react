@@ -103,7 +103,7 @@ export default function Contact() {
                   style={{ maxWidth: "90%" }}
                 >
                   <PhoneInTalkIcon
-                    style={{ height: 50, width: 50, margin: 10 }}
+                    style={{ color: "#fff", height: 50, width: 50, margin: 10 }}
                   />
                   <Typography
                     style={{

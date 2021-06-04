@@ -1,12 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import "../src/App.css";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
@@ -26,11 +20,11 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import musicCodeImg from "./images/music-code.jpeg";
-import myLogo from "./images/myLogo.png";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import PersonIcon from "@material-ui/icons/Person";
+import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
 import WorkIcon from "@material-ui/icons/Work";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
@@ -39,6 +33,13 @@ const drawerWidth = 223;
 
 const useStyles = makeStyles(
   (theme) => ({
+    "@global": {
+    html: {
+      [theme.breakpoints.up("sm")]: {
+        fontSize: 18
+      }
+    }
+  },
     root: {
       display: "flex",
     },
@@ -113,7 +114,7 @@ const useStyles = makeStyles(
       padding: theme.spacing(2),
       display: "flex",
       overflow: "auto",
-      flexDirection: "column",
+      backgroundColor: "transparent",
     },
     fixedHeight: {
       height: 240,
@@ -126,22 +127,17 @@ const useStyles = makeStyles(
       maxHeight: "90%",
       maxWidth: "90%",
     },
-    logo: {
-      align: "left",
-      verticalAlign: "middle",
-      display: "inline",
-      height: "10vh",
-      width: "10vh",
+    logoBig: {
       maxHeight: "10vh",
       maxWidth: "10vh",
-      minHeight: "0px",
-      minWidth: "0px",
+      height: "10px",
+      width: "10px",
       margin: "0px",
-      padding: "0px",
+      paddingTop: "5px",
     },
     sideItems: {
       height: "12vh",
-      marginTop: "15px",
+      marginTop: "5px",
       marginBottom: "10px",
     },
     icons: {
@@ -155,6 +151,9 @@ const useStyles = makeStyles(
       fontFamily: "Times New Roman",
       fontWeight: "bold",
     },
+    mySvgStyle: {
+    fillColor: theme.palette.primary.main,
+  },
   }),
   { withTheme: true }
 );
@@ -176,7 +175,6 @@ function App() {
     setOpen(false);
   };
 
-  console.log("This is the process.env", process.env.PUBLIC_URL);
 
   return (
     <div className="App">
@@ -200,12 +198,6 @@ function App() {
             >
               <MenuIcon style={{ color: "#ffffff", fontSize: "30px" }} />
             </IconButton>
-            {/* <img
-              alt="myLogo"
-              src={myLogo}
-              style={{}}
-              className={classes.logo}
-            ></img> */}
             <Typography
               component="h1"
               variant="h3"
@@ -243,24 +235,11 @@ function App() {
         >
           <div className={classes.toolbarIcon} style={{ height: "11vh" }}>
             {open === true ? (
-              <Grid container xs={12} justify="space-between">
-                <Grid item>
-                  <img
-                    alt="myLogo"
-                    src={myLogo}
-                    style={{}}
-                    onClick={{ display: "none" }}
-                    className={clsx(
-                      classes.logo,
-                      !open && classes.menuButtonHidden
-                    )}
-                  />
-                </Grid>
+              <Grid container justify="flex-end">
                 <Grid item>
                   <IconButton onClick={handleDrawerClose}>
                     <ChevronLeftIcon
                       style={{
-                        float: "right",
                         color: "#ffffff",
                         fontSize: "30px",
                       }}
@@ -278,13 +257,18 @@ function App() {
               <Link to="/" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
-                  component="a"
-                  href="/"
-                  style={{ marginTop: "25px" }}
+                  style={{ marginTop: "5px" }}
                   className={classes.sideItems}
                 >
-                  <ListItemIcon>
-                    <PersonIcon className={classes.icons} />
+                  <ListItemIcon
+                    onMouseOver={(onHover) => (
+                      <PersonOutlineOutlinedIcon
+                        className={classes.icons}
+                        id="lively-icons"
+                      />
+                    )}
+                  >
+                    <PersonIcon className={classes.icons} id="lively-icons" />
                   </ListItemIcon>
                   <ListItemText
                     classes={{ primary: classes.sideText }}
@@ -296,12 +280,10 @@ function App() {
               <Link to="/projects" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
-                  component="a"
-                  href="/projects"
                   className={classes.sideItems}
                 >
                   <ListItemIcon style={{ color: "#ffffff" }}>
-                    <WorkIcon className={classes.icons} />
+                    <WorkIcon className={classes.icons} id="lively-icons" />
                   </ListItemIcon>
                   <ListItemText
                     classes={{ primary: classes.sideText }}
@@ -313,12 +295,10 @@ function App() {
               <Link to="/resume" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
-                  component="a"
-                  href="/resume"
                   className={classes.sideItems}
                 >
                   <ListItemIcon style={{ color: "#ffffff" }}>
-                    <ListAltIcon className={classes.icons} />
+                    <ListAltIcon className={classes.icons} id="lively-icons" />
                   </ListItemIcon>
                   <ListItemText
                     classes={{ primary: classes.sideText }}
@@ -330,12 +310,13 @@ function App() {
               <Link to="/contact" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
-                  component="a"
-                  href="/contact"
                   className={classes.sideItems}
                 >
                   <ListItemIcon style={{ color: "#ffffff" }}>
-                    <ContactMailIcon className={classes.icons} />
+                    <ContactMailIcon
+                      className={classes.icons}
+                      id="lively-icons"
+                    />
                   </ListItemIcon>
                   <ListItemText
                     classes={{ primary: classes.sideText }}
@@ -349,41 +330,26 @@ function App() {
         </Drawer>
         <main className={classes.content}>
           <Switch>
-            {/* <Route
-              exact
-              path={["/iacoviello-portfolio-react"]}
-              render={() => {
-                return <Redirect to="/" />;
-              }}
-            /> */}
             <Route
               exact
               path={["/"]}
               render={(routerProps) => <Portfolio routerProps={routerProps} />}
             />
-            {/* <Portfolio />
-            </Route> */}
             <Route
               exact
               path={["/projects"]}
               render={(routerProps) => <Projects routerProps={routerProps} />}
             />
-            {/* <Projects />
-            </Route> */}
             <Route
               exact
               path={["/resume"]}
               render={(routerProps) => <Resume routerProps={routerProps} />}
             />
-            {/* <Resume />
-            </Route> */}
             <Route
               exact
               path={["/contact"]}
               render={(routerProps) => <Contact routerProps={routerProps} />}
             />
-            {/* <Contact />
-            </Route> */}
           </Switch>
         </main>
       </div>
@@ -391,10 +357,4 @@ function App() {
   );
 }
 
-// export default withStyles(useStyles, {withTheme: true})(App);
-// export default function (props) {
-//   const theme = withTheme();
-
-//   return <App {...props} theme={theme} />;
-// }
 export default App;
