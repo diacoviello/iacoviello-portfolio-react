@@ -78,10 +78,8 @@ export default function Portfolio() {
         >
           <Card className={classes.cardContainer}>
             <CardContent gutterbottom className={classes.cardBody}>
-              <Grid item direction="row" justify="center" alignItems="center">
-
+              <Grid item>
                 <Typography
-                  lineHeight={2.3}
                   letterSpacing={2}
                   style={{
                     bottom: 0,
@@ -92,7 +90,6 @@ export default function Portfolio() {
                 >
                   <Box
                     display="flex"
-                    lineHeight={2}
                     letterSpacing={1.5}
                     className={classes.theBox}
                   >

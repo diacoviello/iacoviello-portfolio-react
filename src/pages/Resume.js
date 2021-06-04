@@ -40,6 +40,7 @@ export default function Resume() {
   return (
     <div>
         <div className={classes.appBarSpacer} />
+        <br />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={10}>
             <SinglePage style={{ width: "100%" }} pdf={ResumePDF} />

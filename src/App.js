@@ -253,7 +253,7 @@ function App() {
           <Divider />
 
           <List>
-            <div>
+            <p>
               <Link to="/" style={{ textDecorationLine: "none" }}>
                 <ListItem
                   button
@@ -325,7 +325,7 @@ function App() {
                   />
                 </ListItem>
               </Link>
-            </div>
+            </p>
           </List>
         </Drawer>
         <main className={classes.content}>
