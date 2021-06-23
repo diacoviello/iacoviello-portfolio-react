@@ -52,7 +52,7 @@ export default function Projects() {
                   <strong>myConcerts</strong>
                 </Typography>
                 <a
-                  href="https://myconcerts-grp5.herokuapp.com/"
+                  href="https://github.com/zpinson/concertapp"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
