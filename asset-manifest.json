@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/iacoviello-portfolio-react/static/css/main.bf6830b7.chunk.css",
-    "main.js": "/iacoviello-portfolio-react/static/js/main.64fa4f52.chunk.js",
-    "main.js.map": "/iacoviello-portfolio-react/static/js/main.64fa4f52.chunk.js.map",
+    "main.js": "/iacoviello-portfolio-react/static/js/main.52fe9bf5.chunk.js",
+    "main.js.map": "/iacoviello-portfolio-react/static/js/main.52fe9bf5.chunk.js.map",
     "runtime-main.js": "/iacoviello-portfolio-react/static/js/runtime-main.7a021ada.js",
     "runtime-main.js.map": "/iacoviello-portfolio-react/static/js/runtime-main.7a021ada.js.map",
     "static/css/2.41296abd.chunk.css": "/iacoviello-portfolio-react/static/css/2.41296abd.chunk.css",
@@ -26,6 +26,6 @@
     "static/css/2.41296abd.chunk.css",
     "static/js/2.029bd314.chunk.js",
     "static/css/main.bf6830b7.chunk.css",
-    "static/js/main.64fa4f52.chunk.js"
+    "static/js/main.52fe9bf5.chunk.js"
   ]
 }
