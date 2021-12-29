@@ -56,7 +56,7 @@ export default function Contact() {
                 <ListItem
                   className="lively-links"
                   component="a"
-                  href="mailto: diacovmusic@gmail.com"
+                  href="mailto: iacoviello.david@gmail.com"
                   target="_blank"
                   style={{ maxWidth: "90%" }}
                 >
