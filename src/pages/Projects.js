@@ -9,7 +9,7 @@ import Fade from '@material-ui/core/Fade';
 import myConcertsImg from "../images/concertsHomepage.png";
 import WeatherImg from "../images/weatherDash.png";
 import TeamProfileImg from "../images/teamgeneratorimg.png";
-import MusicQuizImg from "../images/musicQuiz.png";
+import PythonLogo from "../images/python-logo.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,22 +57,21 @@ export default function Projects() {
   
   return (
     <div>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3} justify="space-evenly">
-           
-           
-           
-            {/* myConcerts */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography className={classes.typography}>
-                  <strong>myConcerts</strong>
-                </Typography>
-                <Tooltip TransitionComponent={Fade} 
-                TransitionProps={{ timeout: 600 }} 
+      <div className={classes.appBarSpacer} />
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={3} justify="space-evenly">
+          {/* myConcerts */}
+          <Grid item xs={5}>
+            <Paper className={classes.projectpaper} elevation={5}>
+              <Typography className={classes.typography}>
+                <strong>myConcerts</strong>
+              </Typography>
+              <Tooltip
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 600 }}
                 placement="top"
-                title={<h4 style={{ color: 'white' }}>{longtext}</h4>}>
+                title={<h4 style={{ color: "white" }}>{longtext}</h4>}
+              >
                 <a
                   href="https://github.com/zpinson/concertapp"
                   target="_blank"
@@ -83,54 +82,57 @@ export default function Projects() {
                     alt="placeholder"
                     style={{ width: "100%", height: "100%" }}
                   />
-                </a></Tooltip>
-              </Paper>
-            </Grid>
+                </a>
+              </Tooltip>
+            </Paper>
+          </Grid>
 
+          {/* Weather */}
+          <Grid item xs={5}>
+            <Paper className={classes.projectpaper} elevation={5}>
+              <Typography className={classes.typography}>
+                <strong>Weather App</strong>
+              </Typography>
 
+              <img
+                src={`${WeatherImg}`}
+                alt="placeholder"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </Paper>
+            <Typography style={{ marginTop: -60 }}>
+              <a
+                href="https://github.com/diacoviello/Weather"
+                target="_blank"
+                className={classes.links}
+                rel="noopener noreferrer"
+              >
+                <strong>GitHub</strong>
+              </a>
+              <strong> | </strong>
+              <a
+                href="https://diacoviello.github.io/Weather/"
+                target="_blank"
+                className={classes.links}
+                rel="noopener noreferrer"
+              >
+                <strong>Deployed Link</strong>
+              </a>
+            </Typography>
+          </Grid>
 
-            {/* Weather */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography className={classes.typography}>
-                  <strong>Weather App</strong>
-                </Typography>
-
-                  <img
-                    src={`${WeatherImg}`}
-                    alt="placeholder"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-              </Paper>
-              <Typography style={{ marginTop: -60 }}>
-                  <a
-                  href="https://github.com/diacoviello/Weather"
-                  target="_blank"
-                  className={classes.links}
-                  rel="noopener noreferrer"
-                ><strong>GitHub</strong></a>
-                  <strong>   |   </strong>
-                  <a
-                  href="https://diacoviello.github.io/Weather/"
-                  target="_blank"
-                  className={classes.links}
-                  rel="noopener noreferrer"
-                ><strong>Deployed Link</strong></a>
-                </Typography>
-            </Grid>
-
-
-
-            {/* Team Profile */}
-            <Grid item xs={5}>
-              <Paper className={classes.projectpaper} elevation={5}>
-                <Typography className={classes.typography}>
-                  <strong>Team Profile Generator</strong>
-                </Typography>
-                <Tooltip TransitionComponent={Fade} 
-                TransitionProps={{ timeout: 600 }} 
+          {/* Team Profile */}
+          <Grid item xs={5}>
+            <Paper className={classes.projectpaper} elevation={5}>
+              <Typography className={classes.typography}>
+                <strong>Team Profile Generator</strong>
+              </Typography>
+              <Tooltip
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 600 }}
                 placement="top"
-                title={<h4 style={{ color: 'white' }}>{longtext2}</h4>}>
+                title={<h4 style={{ color: "white" }}>{longtext2}</h4>}
+              >
                 <a
                   href="https://github.com/diacoviello/TeamProfileGen"
                   target="_blank"
@@ -142,21 +144,18 @@ export default function Projects() {
                     style={{ width: "100%", height: "100%" }}
                   />
                 </a>
-                </Tooltip>
-              </Paper>
-            </Grid>
+              </Tooltip>
+            </Paper>
+          </Grid>
 
-
-
-            
-            {/* Music Quiz */}
-            <Grid item xs={5}>
+          {/* Music Quiz */}
+          {/* <Grid item xs={5}>
               <Paper style={{ alignItems: "center" }} className={classes.projectpaper} elevation={5}>
                 <Typography className={classes.typography}>
                   <strong>Musical Knowledge Quiz: &lt;Timed&gt;</strong>
                 </Typography>
                   <img
-                    src={`${MusicQuizImg}`}
+                    src={`${PythonLogo}`}
                     alt="placeholder"
                     style={{ width: "100%", height: "100%" }}
                   />
@@ -176,9 +175,40 @@ export default function Projects() {
                   rel="noopener noreferrer"
                 ><strong>Deployed Link</strong></a>
                 </Typography>
-            </Grid>
+            </Grid> */}
+
+          {/* ImgSaverCSV */}
+          <Grid item xs={5}>
+            <Paper
+              style={{ alignItems: "center" }}
+              className={classes.projectpaper}
+              elevation={5}
+            >
+              <Typography className={classes.typography}>
+                <strong>ImgSaverCSV</strong>
+              </Typography>
+              <Tooltip
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 600 }}
+                placement="top"
+                title={<h4 style={{ color: "white" }}>{longtext2}</h4>}
+              >
+                <a
+                  href="https://github.com/diacoviello/ImgSaverCSV"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={`${PythonLogo}`}
+                    alt="placeholder"
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </a>
+              </Tooltip>
+            </Paper>
           </Grid>
-        </Container>
+        </Grid>
+      </Container>
     </div>
   );
 }
